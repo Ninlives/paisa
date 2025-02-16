@@ -37,6 +37,9 @@
             ln -s ${nodeDependencies}/lib/node_modules ./node_modules
             export PATH="${nodeDependencies}/.bin:$PATH"
             npm run build
+            mkdir -p ./web/static/pwa
+            cp ./docs/site.webmanifest ./web/static/pwa/
+            cp ./docs/android-chrome-*.png ./web/static/pwa/
           '';
 
         };

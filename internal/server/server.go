@@ -48,6 +48,10 @@ func Build(db *gorm.DB, enableCompression bool) *gin.Engine {
 		c.FileFromFS("/static"+c.Request.URL.Path, http.FS(web.Static))
 	})
 
+	router.GET("/pwa/*filepath", func(c *gin.Context) {
+		c.FileFromFS("/static"+c.Request.URL.Path, http.FS(web.Static))
+	})
+
 	router.GET("/api/ping", func(c *gin.Context) {
 		c.JSON(200, gin.H{"success": true})
 	})
