@@ -40,6 +40,7 @@
             mkdir -p ./web/static/pwa
             cp ./docs/site.webmanifest ./web/static/pwa/
             cp ./docs/android-chrome-*.png ./web/static/pwa/
+            sed -e 's#/android-chrome-#android-chrome-#g' -i ./web/static/pwa/site.webmanifest
           '';
 
         };
